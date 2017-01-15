@@ -1,0 +1,31 @@
+{
+    "Token": "your_bot_token_id",
+    "AlertRoomID": "your_room_id",
+    "Servers": [
+        {
+            "Name": "Elysium PvP",
+            "Address": "149.202.207.235",
+            "Port": 8099
+        },
+        {
+            "Name": "Zethkur PvP",
+            "Address": "151.80.103.221",
+            "Port": 8093
+        },
+        {
+            "Name": "Anathema PvP",
+            "Address": "149.202.211.5",
+            "Port": 8095
+        },
+        {
+            "Name": "Darrowshire PvE",
+            "Address": "164.132.233.125",
+            "Port": 8097
+        },
+        {
+            "Name": "Elysium Authentication Server",
+            "Address": "logon.elysium-project.org",
+            "Port": 3724
+        }
+    ]
+}

@@ -1,6 +1,6 @@
 {
-    "Token": "",
-    "AlertRoomID": "",
+    "Token": "your_bot_token_id",
+    "AlertRoomID": "your_room_id",
     "Servers": [
         {
             "Name": "Elysium PvP",
