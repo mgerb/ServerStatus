@@ -5,12 +5,11 @@ This bot will send a chat notification when the status of a server changes.
 
 ## Configuration
 
-- Download or Clone the repo
-- Add your bot token to the config.json file in the dist folder
-- Add your room id to this file as well
-- Execute the correct executable for your operating system!
+- Download or Clone the repository
+- Add your bot token and room ID to the config.json file in the dist folder
+- Execute the Windows or Linux binary!
 
-### How to get bot token
+### How to get the bot token
 https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token
 
 ### How to get your room ID
