@@ -49,7 +49,9 @@ func loop() {
 }
 
 func sendMessage(message string) {
-	bot.Session.ChannelMessageSend(config.Config.AlertRoomID, message)
+	for _, roomID := range config.Config.RoomIDList {
+		bot.Session.ChannelMessageSend(roomID, message)
+	}
 }
 
 // This function will be called every time a new
@@ -66,7 +68,7 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 			if server.Online {
 				s.ChannelMessageSend(m.ChannelID, server.Name+" is online!")
 			} else {
-				s.ChannelMessageSend(m.ChannelID, server.Name+"is down!")
+				s.ChannelMessageSend(m.ChannelID, server.Name+" is down!")
 			}
 		}
 	}

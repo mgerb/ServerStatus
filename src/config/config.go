@@ -11,9 +11,9 @@ import (
 var Config configStruct
 
 type configStruct struct {
-	Token       string   `json:"Token"`
-	AlertRoomID string   `json:"AlertRoomID"`
-	Servers     []server `json:"Servers"`
+	Token      string   `json:"Token"`
+	RoomIDList []string `json:"RoomIDList"`
+	Servers    []server `json:"Servers"`
 }
 
 type server struct {
