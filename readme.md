@@ -29,3 +29,9 @@ Anathema PvP is online!
 Darrowshire PvE is online!
 Elysium Authentication Server is online!
 ```
+
+## Compiling
+
+Make sure you have Go installed.
+
+`make clean all`

@@ -36,9 +36,9 @@ func loop() {
 			serverUp := elysiumPvP.IsOpen(server.Port) //check if the port is open
 
 			if serverUp && serverUp != prevServerUp {
-				sendMessage("@here " + server.Name + " is now online!")
+				sendMessage(config.Config.RoleToNotify + " " + server.Name + " is now online!")
 			} else if !serverUp && serverUp != prevServerUp {
-				sendMessage("@here " + server.Name + " went offline!")
+				sendMessage(config.Config.RoleToNotify + " " + server.Name + " went offline!")
 			}
 
 			config.Config.Servers[index].Online = serverUp
