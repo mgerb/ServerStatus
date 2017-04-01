@@ -15,6 +15,7 @@ type configStruct struct {
 	RoomIDList   []string `json:"RoomIDList"`
 	RoleToNotify string   `json:"RoleToNotify"`
 	Servers      []server `json:"Servers"`
+	GameStatus   string   `json:"GameStatus"`
 }
 
 type server struct {

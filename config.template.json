@@ -2,6 +2,7 @@
     "Token": "your_bot_token_id",
     "RoomIDList": ["id_1", "id_2", "id_3"],
     "RoleToNotify": "@Elysium",
+    "GameStatus": "current playing game",
     "Servers": [
         {
             "Name": "Elysium PvP",

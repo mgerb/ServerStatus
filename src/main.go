@@ -18,11 +18,15 @@ func main() {
 	//connect bot to account with token
 	bot.Connect(config.Config.Token)
 
-	//start side tasks
-	serverstatus.Start()
-
+	// add handlers
 	bot.AddHandler(serverstatus.MessageHandler)
 
 	//start websocket to listen for messages
 	bot.Start()
+
+	//start server status task
+	serverstatus.Start()
+
+	// Simple way to keep program running until CTRL-C is pressed.
+	<-make(chan struct{})
 }

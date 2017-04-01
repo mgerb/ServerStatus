@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"github.com/anvie/port-scanner"
 	"github.com/bwmarrin/discordgo"
+	"log"
 	"time"
 )
 
@@ -15,11 +16,17 @@ func Start() {
 		config.Config.Servers[i].Online = true
 	}
 
+	err := bot.Session.UpdateStatus(0, config.Config.GameStatus)
+
+	if err != nil {
+		log.Println(err)
+	}
+
 	//start a new go routine
-	go loop()
+	go scanServers()
 }
 
-func loop() {
+func scanServers() {
 
 	//check if server are in config file
 	if len(config.Config.Servers) < 1 {
@@ -32,8 +39,8 @@ func loop() {
 		for index, server := range config.Config.Servers {
 			prevServerUp := server.Online //set value to previous server status
 
-			elysiumPvP := portscanner.NewPortScanner(server.Address, time.Second*2)
-			serverUp := elysiumPvP.IsOpen(server.Port) //check if the port is open
+			serverScanner := portscanner.NewPortScanner(server.Address, time.Second*2)
+			serverUp := serverScanner.IsOpen(server.Port) //check if the port is open
 
 			if serverUp && serverUp != prevServerUp {
 				sendMessage(config.Config.RoleToNotify + " " + server.Name + " is now online!")

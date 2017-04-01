@@ -1,13 +1,21 @@
 ## Server Status
 
-Scans the Elysium servers checking to see if they are up.
+Scans a list of servers checking whether the ports are open or not.
 This bot will send a chat notification when the status of a server changes.
+
+I originally made this bot the check if private World of Warcraft servers were up or not.
+This bot is actually much more useful than that and can be used for any type of server.
 
 ## Configuration
 
-- Download or Clone the repository
-- Add your bot token and room ID to the config.json in the dist folder
-- Execute the correct binary according to your operating system!
+- Download the latest release [here](https://github.com/mgerb/ServerStatus/releases)
+- Add your bot token as well as other configurations to config.json
+- Execute the OS specific binary!
+
+## Compiling from source
+
+- Make sure Go and Make are installed
+- make all
 
 ### How to get the bot token
 https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token
@@ -29,9 +37,3 @@ Anathema PvP is online!
 Darrowshire PvE is online!
 Elysium Authentication Server is online!
 ```
-
-## Compiling
-
-Make sure you have Go installed.
-
-`make clean all`
