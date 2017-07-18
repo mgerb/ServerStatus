@@ -6,6 +6,9 @@ This bot will send a chat notification when the status of a server changes.
 I originally made this bot the check if private World of Warcraft servers were up or not.
 This bot is actually much more useful than that and can be used for any type of server.
 
+### Note - updated for Felmyst server!
+The config template contains IP/Ports for the new Felmyst game and logon servers
+
 ## Configuration
 
 - Download the latest release [here](https://github.com/mgerb/ServerStatus/releases)
