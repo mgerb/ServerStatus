@@ -1,10 +1,12 @@
 ## Server Status
 
 Scans a list of servers checking whether the ports are open or not.
-This bot will send a chat notification when the status of a server changes.
+This bot will send a chat notification when the status of a server changes (goes on or offline).
 
-I originally made this bot the check if private World of Warcraft servers were up or not.
-This bot is actually much more useful than that and can be used for any type of server.
+I originally made this bot to check if private World of Warcraft servers were up or not.
+It's actually much more useful than that and can be used for most servers.
+
+It has been brought to my attention that this bot currently does not work for Ark servers.
 
 ### Note - updated for Felmyst server!
 The config template contains IP/Ports for the new Felmyst game and logon servers
