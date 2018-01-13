@@ -1,9 +1,9 @@
 package main
 
 import (
-	"./bot"
-	"./config"
-	"./serverstatus"
+	"github.com/mgerb/serverstatus/bot"
+	"github.com/mgerb/serverstatus/config"
+	"github.com/mgerb/serverstatus/serverstatus"
 )
 
 // Variables used for command line parameters

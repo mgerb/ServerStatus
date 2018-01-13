@@ -1,18 +1,17 @@
 {
     "Token": "your bot token",
-    "RoomIDList":["room id's goes here"],
-    "RoleToNotify": "@Elysium",
+    "RoomIDList":["room id list goes here"],
+    "RoleToNotify": "@everyone",
     "GameStatus": "current playing game",
     "Servers": [
         {
-            "Name": "Felmyst Logon Server",
-            "Address": "game.felmyst.com",
-            "Port": 3724
-        },
-        {
-            "Name": "Felmyst Game Server",
-            "Address": "108.61.153.42",
-            "Port": 8086
+            "Name": "Your awesome server",
+            "Address": "game.server.com",
+            "Port": 80
+        }, {
+            "Name": "Another awesome server",
+            "Address": "awesome.server.com",
+            "Port": 8080
         }
     ]
 }

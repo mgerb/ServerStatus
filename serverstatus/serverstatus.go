@@ -1,13 +1,13 @@
 package serverstatus
 
 import (
-	"../bot"
-	"../config"
-	"fmt"
-	"github.com/anvie/port-scanner"
-	"github.com/bwmarrin/discordgo"
 	"log"
 	"time"
+
+	"github.com/anvie/port-scanner"
+	"github.com/bwmarrin/discordgo"
+	"github.com/mgerb/serverstatus/bot"
+	"github.com/mgerb/serverstatus/config"
 )
 
 func Start() {
@@ -30,7 +30,7 @@ func scanServers() {
 
 	//check if server are in config file
 	if len(config.Config.Servers) < 1 {
-		fmt.Println("No servers in config file.")
+		log.Println("No servers in config file.")
 		return
 	}
 
@@ -39,7 +39,7 @@ func scanServers() {
 		for index, server := range config.Config.Servers {
 			prevServerUp := server.Online //set value to previous server status
 
-			serverScanner := portscanner.NewPortScanner(server.Address, time.Second*2)
+			serverScanner := portscanner.NewPortScanner(server.Address, time.Second*2, 1)
 			serverUp := serverScanner.IsOpen(server.Port) //check if the port is open
 
 			if serverUp && serverUp != prevServerUp {
