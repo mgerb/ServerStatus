@@ -1,7 +1,7 @@
 {
     "Token": "your bot token",
     "RoomIDList":["room id list goes here"],
-    "RoleToNotify": "@everyone",
+    "RolesToNotify": ["<@&roleid>", "<@userid>"],
     "GameStatus": "current playing game",
     "Servers": [
         {
