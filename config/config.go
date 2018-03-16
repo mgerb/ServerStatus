@@ -2,6 +2,7 @@ package config
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
@@ -11,11 +12,11 @@ import (
 var Config configStruct
 
 type configStruct struct {
-	Token        string   `json:"Token"`
-	RoomIDList   []string `json:"RoomIDList"`
-	RoleToNotify string   `json:"RoleToNotify"`
-	Servers      []server `json:"Servers"`
-	GameStatus   string   `json:"GameStatus"`
+	Token         string   `json:"Token"`
+	RoomIDList    []string `json:"RoomIDList"`
+	RolesToNotify []string `json:"RolesToNotify"`
+	Servers       []server `json:"Servers"`
+	GameStatus    string   `json:"GameStatus"`
 }
 
 type server struct {
@@ -27,7 +28,7 @@ type server struct {
 
 func Configure() {
 
-	log.Println("Reading config file...")
+	fmt.Println("Reading config file...")
 
 	file, e := ioutil.ReadFile("./config.json")
 
@@ -35,8 +36,6 @@ func Configure() {
 		log.Printf("File error: %v\n", e)
 		os.Exit(1)
 	}
-
-	log.Printf("%s\n", string(file))
 
 	err := json.Unmarshal(file, &Config)
 

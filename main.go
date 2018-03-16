@@ -1,15 +1,23 @@
 package main
 
 import (
-	"github.com/mgerb/serverstatus/bot"
-	"github.com/mgerb/serverstatus/config"
-	"github.com/mgerb/serverstatus/serverstatus"
+	"fmt"
+
+	"github.com/mgerb/ServerStatus/bot"
+	"github.com/mgerb/ServerStatus/config"
+	"github.com/mgerb/ServerStatus/serverstatus"
 )
 
 // Variables used for command line parameters
 var (
 	BotID string
 )
+
+var version = "undefined"
+
+func init() {
+	fmt.Println("Starting Server Status " + version)
+}
 
 func main() {
 	//read config file
