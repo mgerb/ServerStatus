@@ -3,6 +3,7 @@
     "RoomIDList":["room id list goes here"],
     "RolesToNotify": ["<@&roleid>", "<@userid>"],
     "GameStatus": "current playing game",
+    "PollingInterval": 10,
     "Servers": [
         {
             "Name": "Your awesome server",

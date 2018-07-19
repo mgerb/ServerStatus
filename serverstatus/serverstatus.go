@@ -61,7 +61,7 @@ func scanServers() {
 			config.Config.Servers[index].Online = serverUp
 		}
 
-		time.Sleep(time.Second * 5)
+		time.Sleep(time.Second * config.Config.PollingInterval)
 	}
 }
 

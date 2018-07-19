@@ -17,6 +17,14 @@ NOTE: This bot currently does not work for UDP servers.
 - for user `<@userid>`
 - for role `<@&roleid>`
 
+### Polling Interval
+The polling interval is how often the bot will try to ping the servers.
+A good interval is 10 seconds, but this may need some adjustment if
+it happens to be spamming notifications.
+
+- time in seconds
+- configurable in `config.json`
+
 ## Usage
 To get the current status of your servers simply type `!ServerStatus` in chat.
 
