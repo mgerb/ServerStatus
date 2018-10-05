@@ -5,7 +5,7 @@ This bot will send a chat notification when the status of a server changes (goes
 I originally made this bot to check if private World of Warcraft servers were up or not.
 It's actually much more useful than that and can be used for most servers.
 
-NOTE: This bot currently does not work for UDP servers.
+NOTE: This bot currently does not have any UDP support.
 
 ## Configuration
 - Download the latest release [here](https://github.com/mgerb/ServerStatus/releases)
@@ -24,6 +24,24 @@ it happens to be spamming notifications.
 
 - time in seconds
 - configurable in `config.json`
+
+## With Docker
+
+```
+docker run -it -v /path/to/your/config.json:/server-status/config.json:ro mgerb/server-status
+```
+
+### Docker Compose
+
+```
+version: "2"
+
+services:
+  server-status:
+    image: mgerb/server-status:latest
+    volumes:
+    - /path/to/your/config.json:/server-status/config.json
+```
 
 ## Usage
 To get the current status of your servers simply type `!ServerStatus` in chat.
