@@ -1,0 +1,7 @@
+version: "2"
+
+services:
+  server-status:
+    image: mgerb/server-status:latest
+    volumes:
+    - ./config.json:/server-status/config.json
