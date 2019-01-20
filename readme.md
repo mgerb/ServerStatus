@@ -1,11 +1,9 @@
 # Server Status
-Scans a list of TCP servers checking checking which are currently online.
+Scans a list of servers checking checking which are currently online.
 This bot will send a chat notification when the status of a server changes (goes on or offline).
 
-I originally made this bot to check if private World of Warcraft servers were up or not.
-It's actually much more useful than that and can be used for most servers.
-
-NOTE: This bot currently does not have any UDP support.
+- **TCP** - should work with all servers
+- **UDP** - [Source RCON Protocol](https://developer.valvesoftware.com/wiki/Source_RCON_Protocol) is supported
 
 ## Configuration
 - Download the latest release [here](https://github.com/mgerb/ServerStatus/releases)
@@ -13,7 +11,7 @@ NOTE: This bot currently does not have any UDP support.
 - Execute the OS specific binary!
 
 ### Mentioning Roles/Users
-- you must first get your role/user id
+- you must first get your role/user id (see below of obtaining ID's)
 - for user `<@userid>`
 - for role `<@&roleid>`
 

@@ -2,40 +2,88 @@
 
 
 [[projects]]
+  digest = "1:87c2e02fb01c27060ccc5ba7c5a407cc91147726f8f40b70cceeedbc52b1f3a8"
+  name = "github.com/Sirupsen/logrus"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "e1e72e9de974bd926e5c56f83753fba2df402ce5"
+  version = "v1.3.0"
+
+[[projects]]
   branch = "master"
+  digest = "1:b7e05c8da029b985907b15e126cde5f42f2814b08211a184dac436eeec6fe780"
   name = "github.com/anvie/port-scanner"
   packages = [
     ".",
     "predictors",
-    "predictors/webserver"
+    "predictors/webserver",
   ]
+  pruneopts = "UT"
   revision = "8159197d3770eb6dbf3a9706a6d40462ebb69cec"
 
 [[projects]]
+  digest = "1:4fd5ce7844c22e194005b9e12fee8adc70fb5ba0bbba9e1964d2e3d1f301d789"
   name = "github.com/bwmarrin/discordgo"
   packages = ["."]
+  pruneopts = "UT"
   revision = "4a33b9bc7c56cfdb9bb244e33e83cb3941fe2bdc"
   version = "v0.18.0"
 
 [[projects]]
+  digest = "1:43dd08a10854b2056e615d1b1d22ac94559d822e1f8b6fcc92c1a1057e85188e"
   name = "github.com/gorilla/websocket"
   packages = ["."]
+  pruneopts = "UT"
   revision = "ea4d1f681babbce9545c9c5f3d5194a789c89f5b"
   version = "v1.2.0"
 
 [[projects]]
   branch = "master"
+  digest = "1:50993a8fbb3042b88dfecb8f4473a42f13ac70d6fd86f64df525a28b357c2d5b"
+  name = "github.com/kidoman/go-steam"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "2e40e0d508cbac591bab4ae18b231153295f3a0a"
+
+[[projects]]
+  digest = "1:0a69a1c0db3591fcefb47f115b224592c8dfa4368b7ba9fae509d5e16cdc95c8"
+  name = "github.com/konsorten/go-windows-terminal-sequences"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "5c8c8bd35d3832f5d134ae1e1e375b69a4d25242"
+  version = "v1.0.1"
+
+[[projects]]
+  branch = "master"
+  digest = "1:e035fb07be76ce6e4ce005add75491d9f0749403f595f153d6e2823a71c24149"
   name = "golang.org/x/crypto"
   packages = [
     "nacl/secretbox",
     "poly1305",
-    "salsa20/salsa"
+    "salsa20/salsa",
+    "ssh/terminal",
   ]
+  pruneopts = "UT"
   revision = "c4a91bd4f524f10d064139674cf55852e055ad01"
+
+[[projects]]
+  branch = "master"
+  digest = "1:43cde116ff48f299eddb7e6515677e6d0a2c915854bb05a333877f07c3bb3033"
+  name = "golang.org/x/sys"
+  packages = [
+    "unix",
+    "windows",
+  ]
+  pruneopts = "UT"
+  revision = "11f53e03133963fb11ae0588e08b5e0b85be8be5"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "0832269100c492c595c4fe5f02e10d70889b9fa4d6a869c3ad59584cda0c5d31"
+  input-imports = [
+    "github.com/anvie/port-scanner",
+    "github.com/bwmarrin/discordgo",
+    "github.com/kidoman/go-steam",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1

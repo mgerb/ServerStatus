@@ -2,11 +2,13 @@ package serverstatus
 
 import (
 	"log"
+	"strconv"
 	"strings"
 	"time"
 
 	"github.com/anvie/port-scanner"
 	"github.com/bwmarrin/discordgo"
+	steam "github.com/kidoman/go-steam"
 	"github.com/mgerb/ServerStatus/bot"
 	"github.com/mgerb/ServerStatus/config"
 )
@@ -51,6 +53,19 @@ func scanServers() {
 
 			serverScanner := portscanner.NewPortScanner(server.Address, time.Second*2, 1)
 			serverUp := serverScanner.IsOpen(server.Port) //check if the port is open
+
+			// if server isn't up check RCON protocol (UDP)
+			if !serverUp {
+				host := server.Address + ":" + strconv.Itoa(server.Port)
+				steamConnection, err := steam.Connect(host)
+				if err == nil {
+					defer steamConnection.Close()
+					_, err := steamConnection.Ping()
+					if err == nil {
+						serverUp = true
+					}
+				}
+			}
 
 			if serverUp && serverUp != prevServerUp {
 				sendMessageToRooms(green, server.Name, "Is now online :smiley:", true)

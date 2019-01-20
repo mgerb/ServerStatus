@@ -8,11 +8,6 @@ import (
 	"github.com/mgerb/ServerStatus/serverstatus"
 )
 
-// Variables used for command line parameters
-var (
-	BotID string
-)
-
 var version = "undefined"
 
 func init() {
