@@ -1,19 +1,18 @@
 # Server Status
-Scans a list of servers checking checking which are currently online.
-This bot will send a chat notification when the status of a server changes (goes on or offline).
+Monitors a list of servers and sends a chat notification when a server goes on or offline.
 
 - **TCP** - should work with all servers
 - **UDP** - [Source RCON Protocol](https://developer.valvesoftware.com/wiki/Source_RCON_Protocol) is supported
 
 ## Configuration
 - Download the latest release [here](https://github.com/mgerb/ServerStatus/releases)
-- Add your bot token as well as other configurations to config.json
+- Add your bot token as well as other configurations to **config.json**
 - Execute the OS specific binary!
 
 ### Mentioning Roles/Users
-- you must first get your role/user id (see below of obtaining ID's)
-- for user `<@userid>`
-- for role `<@&roleid>`
+- list of user/role ID's must be in the following format (see below for obtaining ID's)
+- `<@userid>`
+- `<@&roleid>`
 
 ### Polling Interval
 The polling interval is how often the bot will try to ping the servers.
@@ -21,7 +20,7 @@ A good interval is 10 seconds, but this may need some adjustment if
 it happens to be spamming notifications.
 
 - time in seconds
-- configurable in `config.json`
+- configurable in **config.json**
 
 ## With Docker
 
