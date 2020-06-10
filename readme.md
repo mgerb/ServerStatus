@@ -1,8 +1,21 @@
 # Server Status
 Monitors a list of servers and sends a chat notification when a server goes on or offline.
 
+Enjoy the bot?
+
+<a href="https://www.buymeacoffee.com/mgerb" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
+## Features
+
+- send channel notifications
+- track server up/down time
 - **TCP** - should work with all servers
 - **UDP** - [Source RCON Protocol](https://developer.valvesoftware.com/wiki/Source_RCON_Protocol) is supported
+- [Docker](https://hub.docker.com/r/mgerb/server-status)
+
+### Want to see more features?
+
+[Submit a new issue](https://github.com/mgerb/ServerStatus/issues/new/choose)
 
 ## Configuration
 - Download the latest release [here](https://github.com/mgerb/ServerStatus/releases)
