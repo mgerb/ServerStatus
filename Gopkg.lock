@@ -2,12 +2,12 @@
 
 
 [[projects]]
-  digest = "1:87c2e02fb01c27060ccc5ba7c5a407cc91147726f8f40b70cceeedbc52b1f3a8"
+  digest = "1:05eebdd5727fea23083fce0d98d307d70c86baed644178e81608aaa9f09ea469"
   name = "github.com/Sirupsen/logrus"
   packages = ["."]
   pruneopts = "UT"
-  revision = "e1e72e9de974bd926e5c56f83753fba2df402ce5"
-  version = "v1.3.0"
+  revision = "60c74ad9be0d874af0ab0daef6ab07c5c5911f0d"
+  version = "v1.6.0"
 
 [[projects]]
   branch = "master"
@@ -22,20 +22,20 @@
   revision = "8159197d3770eb6dbf3a9706a6d40462ebb69cec"
 
 [[projects]]
-  digest = "1:4fd5ce7844c22e194005b9e12fee8adc70fb5ba0bbba9e1964d2e3d1f301d789"
+  digest = "1:d87c9221a974263e3b369bfd3513707b2a53e27a6cd799d472f94dc6a6157e59"
   name = "github.com/bwmarrin/discordgo"
   packages = ["."]
   pruneopts = "UT"
-  revision = "4a33b9bc7c56cfdb9bb244e33e83cb3941fe2bdc"
-  version = "v0.18.0"
+  revision = "ed4d6904961d1688b3f5601b3d73e95a71046734"
+  version = "v0.20.3"
 
 [[projects]]
-  digest = "1:43dd08a10854b2056e615d1b1d22ac94559d822e1f8b6fcc92c1a1057e85188e"
+  digest = "1:6d29f02f0f01c627c2be40fb7347669a9ff2aa215cb97747294c1d13ffa74bdd"
   name = "github.com/gorilla/websocket"
   packages = ["."]
   pruneopts = "UT"
-  revision = "ea4d1f681babbce9545c9c5f3d5194a789c89f5b"
-  version = "v1.2.0"
+  revision = "b65e62901fc1c0d968042419e74789f6af455eb9"
+  version = "v1.4.2"
 
 [[projects]]
   branch = "master"
@@ -46,36 +46,37 @@
   revision = "2e40e0d508cbac591bab4ae18b231153295f3a0a"
 
 [[projects]]
-  digest = "1:0a69a1c0db3591fcefb47f115b224592c8dfa4368b7ba9fae509d5e16cdc95c8"
+  digest = "1:09cb61dc19af93deae01587e2fdb1c081e0bf48f1a5ad5fa24f48750dc57dce8"
   name = "github.com/konsorten/go-windows-terminal-sequences"
   packages = ["."]
   pruneopts = "UT"
-  revision = "5c8c8bd35d3832f5d134ae1e1e375b69a4d25242"
-  version = "v1.0.1"
+  revision = "edb144dfd453055e1e49a3d8b410a660b5a87613"
+  version = "v1.0.3"
 
 [[projects]]
   branch = "master"
-  digest = "1:e035fb07be76ce6e4ce005add75491d9f0749403f595f153d6e2823a71c24149"
+  digest = "1:1714bd928fd176237ccdea21695bf72801c1ee5f51bccefb69b87f0fd376a6aa"
   name = "golang.org/x/crypto"
   packages = [
+    "internal/subtle",
     "nacl/secretbox",
     "poly1305",
     "salsa20/salsa",
-    "ssh/terminal",
   ]
   pruneopts = "UT"
-  revision = "c4a91bd4f524f10d064139674cf55852e055ad01"
+  revision = "70a84ac30bf957c7df57edd1935d2081871515e1"
 
 [[projects]]
   branch = "master"
-  digest = "1:43cde116ff48f299eddb7e6515677e6d0a2c915854bb05a333877f07c3bb3033"
+  digest = "1:145abe7dfa46d17ef35e5126ed1cc87b9100e78b9f428c9460deea34bfeabafb"
   name = "golang.org/x/sys"
   packages = [
+    "cpu",
+    "internal/unsafeheader",
     "unix",
-    "windows",
   ]
   pruneopts = "UT"
-  revision = "11f53e03133963fb11ae0588e08b5e0b85be8be5"
+  revision = "226ff32320da7b90d0b5bc2365f4e359c466fb78"
 
 [solve-meta]
   analyzer-name = "dep"

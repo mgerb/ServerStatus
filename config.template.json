@@ -4,6 +4,7 @@
     "RolesToNotify": ["<@&roleid>", "<@userid>"],
     "GameStatus": "current playing game",
     "PollingInterval": 10,
+    "BotPrefix": "!",
     "Servers": [
         {
             "Name": "Your awesome server",

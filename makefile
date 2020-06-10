@@ -4,7 +4,7 @@ run:
 	go run ./src/main.go
 
 linux:
-	go build -o ./dist/ServerStatus-linux -ldflags="-X main.version=${VERSION}" ./main.go
+	GOOS=linux GOARCH=amd64 go build -o ./dist/ServerStatus-linux -ldflags="-X main.version=${VERSION}" ./main.go
 
 mac:
 	GOOS=darwin GOARCH=amd64 go build -o ./dist/ServerStatus-mac -ldflags="-X main.version=${VERSION}" ./main.go

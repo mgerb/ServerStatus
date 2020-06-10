@@ -16,16 +16,20 @@ type configStruct struct {
 	Token           string        `json:"Token"`
 	RoomIDList      []string      `json:"RoomIDList"`
 	RolesToNotify   []string      `json:"RolesToNotify"`
-	Servers         []server      `json:"Servers"`
+	Servers         []Server      `json:"Servers"`
 	GameStatus      string        `json:"GameStatus"`
 	PollingInterval time.Duration `json:"PollingInterval"`
+	BotPrefix       string        `json:"BotPrefix"`
 }
 
-type server struct {
+type Server struct {
 	Name    string `json:"Name"`
 	Address string `json:"Address"`
 	Port    int    `json:"Port"`
 	Online  bool   `json:"Online,omitempty"`
+	// OnlineTimestamp - time of when the server last came online
+	OnlineTimestamp  time.Time
+	OfflineTimestamp time.Time
 }
 
 func Configure() {
