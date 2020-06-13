@@ -153,7 +153,7 @@ func MessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 func fmtDuration(d time.Duration) string {
 
 	days := int(d.Hours()) / 24
-	hours := int(d.Hours()) % 60
+	hours := int(d.Hours()) % 24
 	minutes := int(d.Minutes()) % 60
 	seconds := int(d.Seconds()) % 60
 
