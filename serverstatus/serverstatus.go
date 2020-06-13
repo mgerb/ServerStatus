@@ -57,7 +57,7 @@ func scanServers() {
 
 		for index := range config.Config.Servers {
 			wg.Add(1)
-			go worker(index, &config.Config.Servers[index], &wg)
+			go worker(&config.Config.Servers[index], &wg)
 		}
 
 		wg.Wait()
@@ -66,7 +66,7 @@ func scanServers() {
 	}
 }
 
-func worker(index int, server *config.Server, wg *sync.WaitGroup) {
+func worker(server *config.Server, wg *sync.WaitGroup) {
 	defer wg.Done()
 
 	prevServerUp := server.Online //set value to previous server status
@@ -78,24 +78,26 @@ func worker(index int, server *config.Server, wg *sync.WaitGroup) {
 	for {
 		serverScanner := portscanner.NewPortScanner(server.Address, time.Second*2, 1)
 		serverUp = serverScanner.IsOpen(server.Port) //check if the port is open
+
+		// if server isn't up check RCON protocol (UDP)
+		if !serverUp {
+			host := server.Address + ":" + strconv.Itoa(server.Port)
+			steamConnection, err := steam.Connect(host)
+			if err == nil {
+				defer steamConnection.Close()
+				_, err := steamConnection.Ping()
+				if err == nil {
+					serverUp = true
+				}
+			}
+		}
+
 		if serverUp || retryCounter >= 5 {
 			break
 		}
+
 		retryCounter++
 		time.Sleep(time.Second * 2)
-	}
-
-	// if server isn't up check RCON protocol (UDP)
-	if !serverUp {
-		host := server.Address + ":" + strconv.Itoa(server.Port)
-		steamConnection, err := steam.Connect(host)
-		if err == nil {
-			defer steamConnection.Close()
-			_, err := steamConnection.Ping()
-			if err == nil {
-				serverUp = true
-			}
-		}
 	}
 
 	if serverUp && serverUp != prevServerUp {
