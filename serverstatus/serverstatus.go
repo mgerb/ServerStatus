@@ -32,7 +32,7 @@ func Start() {
 
 	err := bot.Session.UpdateStatus(0, config.Config.GameStatus)
 
-	sendMessageToRooms(blue, "Server Status", "Bot started! Type !ServerStatus to see the status of your servers :smiley:", false)
+	sendMessageToRooms(blue, "Server Status", fmt.Sprintf("Bot started! Type %sServerStatus to see the status of your servers :smiley:", config.Config.BotPrefix), false)
 
 	if err != nil {
 		log.Println(err)
