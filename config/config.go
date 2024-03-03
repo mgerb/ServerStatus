@@ -19,7 +19,6 @@ type configStruct struct {
 	Servers         []Server      `json:"Servers"`
 	GameStatus      string        `json:"GameStatus"`
 	PollingInterval time.Duration `json:"PollingInterval"`
-	BotPrefix       string        `json:"BotPrefix"`
 }
 
 type Server struct {

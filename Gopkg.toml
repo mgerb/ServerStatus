@@ -31,7 +31,7 @@
 
 [[constraint]]
   name = "github.com/bwmarrin/discordgo"
-  version = "0.20.0"
+  version = "0.24.0"
 
 [prune]
   go-tests = true

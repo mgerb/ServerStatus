@@ -22,13 +22,13 @@ func main() {
 	bot.Connect(config.Config.Token)
 
 	// add handlers
-	bot.AddHandler(serverstatus.MessageHandler)
+    bot.AddHandler(serverstatus.InteractionHandler)
 
 	//start websocket to listen for messages
 	bot.Start()
 
 	//start server status task
-	serverstatus.Start()
+    serverstatus.Start()
 
 	// Simple way to keep program running until CTRL-C is pressed.
 	<-make(chan struct{})
