@@ -1,10 +1,6 @@
 # Server Status
 Monitors a list of servers and sends a chat notification when a server goes on or offline.
 
-Enjoy the bot?
-
-<a href="https://www.buymeacoffee.com/mgerb" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-
 ## Features
 
 - send channel notifications
@@ -54,7 +50,7 @@ services:
 ```
 
 ## Usage
-To get the current status of your servers simply type `!ServerStatus` in chat.
+To get the current status of your servers simply type `/server-status` in chat.
 
 ![Server Status](./readme_files/screenshot1.png)
 

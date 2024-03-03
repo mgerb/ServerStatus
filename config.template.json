@@ -1,19 +1,19 @@
 {
-    "Token": "your bot token",
-    "RoomIDList":["room id list goes here"],
-    "RolesToNotify": ["<@&roleid>", "<@userid>"],
-    "GameStatus": "current playing game",
-    "PollingInterval": 10,
-    "BotPrefix": "!",
-    "Servers": [
-        {
-            "Name": "Your awesome server",
-            "Address": "game.server.com",
-            "Port": 80
-        }, {
-            "Name": "Another awesome server",
-            "Address": "awesome.server.com",
-            "Port": 8080
-        }
-    ]
+  "Token": "your bot token",
+  "RoomIDList": ["room id list goes here"],
+  "RolesToNotify": ["<@&roleid>", "<@userid>"],
+  "GameStatus": "current playing game",
+  "PollingInterval": 10,
+  "Servers": [
+    {
+      "Name": "Your awesome server",
+      "Address": "game.server.com",
+      "Port": 80
+    },
+    {
+      "Name": "Another awesome server",
+      "Address": "awesome.server.com",
+      "Port": 8080
+    }
+  ]
 }

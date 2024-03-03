@@ -23,32 +23,32 @@ const (
 
 // Start - add command, start port scanner and bot listeners
 func Start() {
-    //add command
-    _, err := bot.Session.ApplicationCommandCreate(bot.Session.State.User.ID, "", &discordgo.ApplicationCommand {
-        Name: "server-status",
-        Description: "Get the status of the servers.",
-    })
+	//add command
+	_, err := bot.Session.ApplicationCommandCreate(bot.Session.State.User.ID, "", &discordgo.ApplicationCommand{
+		Name:        "server-status",
+		Description: "Get the status of the servers.",
+	})
 
-    if err != nil {
-        log.Panicf("Cannot create status command '%v'", err)
-    }
+	if err != nil {
+		log.Panicf("Cannot create status command '%v'", err)
+	}
 
-    //set each server status as online to start
+	//set each server status as online to start
 	for i := range config.Config.Servers {
 		config.Config.Servers[i].Online = true
 		config.Config.Servers[i].OnlineTimestamp = time.Now()
 		config.Config.Servers[i].OfflineTimestamp = time.Now()
 	}
 
-	err = bot.Session.UpdateStatusComplex(discordgo.UpdateStatusData { 
-        Status: "online", 
-        Activities: []*discordgo.Activity {
-            &discordgo.Activity {
-                Type: discordgo.ActivityTypeGame,
-                Name: config.Config.GameStatus,
-            },
-        },
-    })
+	err = bot.Session.UpdateStatusComplex(discordgo.UpdateStatusData{
+		Status: "online",
+		Activities: []*discordgo.Activity{
+			&discordgo.Activity{
+				Type: discordgo.ActivityTypeGame,
+				Name: config.Config.GameStatus,
+			},
+		},
+	})
 
 	sendMessageToRooms(blue, "Server Status", "Bot started! Type /server-status to see the status of your servers :smiley:", false)
 
@@ -153,40 +153,47 @@ func sendEmbeddedMessage(roomID string, color int, title, description string) {
 // InteractionHandler will be called every time an interaction from a user occurs
 // Command interaction handling requires bot command scope
 func InteractionHandler(s *discordgo.Session, i *discordgo.InteractionCreate) {
-    // A user is calling us with our status command
-    if i.ApplicationCommandData().Name == "server-status" {
-        online := ""
-        offline := ""
+	// A user is calling us with our status command
+	if i.ApplicationCommandData().Name == "server-status" {
+		online := ""
+		offline := ""
 
-        for _, server := range config.Config.Servers {
-            if server.Online {
-                online = online + server.Name + "  :  " + fmtDuration(time.Since(server.OnlineTimestamp)) + "\n"
-            } else {
-                offline = offline + server.Name + "  :  " + fmtDuration(time.Since(server.OfflineTimestamp)) + "\n"
-            }
-        }
+		for _, server := range config.Config.Servers {
+			if server.Online {
+				online = online + server.Name + "  :  " + fmtDuration(time.Since(server.OnlineTimestamp)) + "\n"
+			} else {
+				offline = offline + server.Name + "  :  " + fmtDuration(time.Since(server.OfflineTimestamp)) + "\n"
+			}
+		}
 
-        // Only one message can be an interaction response. Messages can only contain up to 10 embeds.
-        // Our message will therefore instead be two embeds (online and offline), each with a list of servers in text.
-        // Embed descriptions can be ~4096 characters, so no limits should get hit with this.
-        s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse {
-            Type: discordgo.InteractionResponseChannelMessageWithSource,
-            Data: &discordgo.InteractionResponseData {
-                Embeds: []*discordgo.MessageEmbed {
-                    {
-                        Title: ":white_check_mark: Online",
-                        Color: green,
-                        Description: online,
-                    },
-                    {
-                        Title: ":x: Offline",
-                        Color: red,
-                        Description: offline,
-                    },
-                },
-            },
-        })
-    }
+		embeds := []*discordgo.MessageEmbed{}
+
+		if online != "" {
+			embeds = append(embeds, &discordgo.MessageEmbed{
+				Title:       ":white_check_mark: Online",
+				Color:       green,
+				Description: online,
+			})
+		}
+
+		if offline != "" {
+			embeds = append(embeds, &discordgo.MessageEmbed{
+				Title:       ":x: Offline",
+				Color:       red,
+				Description: offline,
+			})
+		}
+
+		// Only one message can be an interaction response. Messages can only contain up to 10 embeds.
+		// Our message will therefore instead be two embeds (online and offline), each with a list of servers in text.
+		// Embed descriptions can be ~4096 characters, so no limits should get hit with this.
+		s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
+			Type: discordgo.InteractionResponseChannelMessageWithSource,
+			Data: &discordgo.InteractionResponseData{
+				Embeds: embeds,
+			},
+		})
+	}
 }
 
 func fmtDuration(d time.Duration) string {
