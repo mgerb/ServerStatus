@@ -3,5 +3,9 @@ version: "3"
 services:
   server-status:
     image: mgerb/server-status:latest
+    build:
+      args:
+        UID: 1000
+        GID: 1000
     volumes:
     - ./config.json:/server-status/config.json
