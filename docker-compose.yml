@@ -2,6 +2,6 @@ version: "3"
 
 services:
   server-status:
-    image: ethorbit/discord-server-status:latest
+    image: mgerb/server-status:latest
     volumes:
     - ./config.json:/server-status/config.json

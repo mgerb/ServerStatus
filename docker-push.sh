@@ -1,5 +1,5 @@
-version=$(git rev-parse --short HEAD)
+version=$(git describe --tags)
 
-docker push ethorbit/discord-server-status:latest;
-docker push ethorbit/discord-server-status:$version;
+docker push mgerb/server-status:latest;
+docker push mgerb/server-status:$version;
 
